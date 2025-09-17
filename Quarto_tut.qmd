@@ -2,6 +2,7 @@
 title: "R tutorial"
 format: html
 editor: visual
+bibliography: References.bib
 ---
 
 ## Quarto
