@@ -11,6 +11,9 @@ csl: vancouver.csl
 Dette blir bra @billatOxygenKineticsModelling2000! Muligens vanskelig @bossiOptimizingIntervalTraining2020.
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
 library(exscidata)
 library(tidyverse)
 
