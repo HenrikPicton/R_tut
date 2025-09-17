@@ -9,3 +9,16 @@ csl: vancouver.csl
 ## oh yeah
 
 Dette blir bra @billatOxygenKineticsModelling2000! Muligens vanskelig @bossiOptimizingIntervalTraining2020.
+
+```{r}
+library(exscidata)
+library(tidyverse)
+
+
+  exscidata::boston |>
+  filter(year == 2019) |>
+  
+  ggplot(aes(x = age, y = seconds)) +
+    geom_point()
+
+```
