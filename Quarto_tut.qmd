@@ -6,9 +6,11 @@ bibliography: References.bib
 csl: vancouver.csl
 ---
 
-## oh yeah
+## Oh yeah
 
 Dette blir bra @billatOxygenKineticsModelling2000! Muligens vanskelig @bossiOptimizingIntervalTraining2020.
+
+## Scatterplot av alle deltakere i Boston marathon 2019
 
 ```{r}
 #| echo: false
@@ -25,3 +27,4 @@ library(tidyverse)
     geom_point()
 
 ```
+
