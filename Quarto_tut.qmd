@@ -8,4 +8,4 @@ csl: vancouver.csl
 
 ## oh yeah
 
-Dette blir bra @billatOxygenKineticsModelling2000!
+Dette blir bra @billatOxygenKineticsModelling2000! Muligens vanskelig @bossiOptimizingIntervalTraining2020.
