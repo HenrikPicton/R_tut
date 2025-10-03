@@ -1,11 +1,11 @@
 library(tidyverse)
 library(exscidata)
 
+Oppgave10 <- strengthvolume %>%
+  select(exercise,time, sets, load, sex) %>% 
+  filter(exercise %in% c("legext", "legpress")) %>% 
+  group_by(exercise, time, sets, sex) %>% 
+  summarise(Avgload = mean(load, na.rm = TRUE),
+            Sdload = sd(load, na.rm = TRUE)) %>% 
+  head(38)
 
-strengthvolume %>%
-  group_by(time, sets, sex, exercise) %>%
-  summarise(
-    mean_load = mean(load, na.rm = TRUE),
-    sd_load   = sd(load, na.rm = TRUE),
-    .groups = "drop"
-  )
