@@ -8,7 +8,7 @@ Oppgave10 <- strengthvolume %>%
   summarise(Avgload = mean(load, na.rm = TRUE),
             Sdload = sd(load, na.rm = TRUE))
 
-
+Oppgave10
 
 
   
