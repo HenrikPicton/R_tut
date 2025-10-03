@@ -11,3 +11,4 @@ Oppgave10 <- strengthvolume %>%
 
 
 
+  
