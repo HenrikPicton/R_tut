@@ -6,6 +6,8 @@ Oppgave10 <- strengthvolume %>%
   filter(exercise %in% c("legext", "legpress")) %>% 
   group_by(exercise, time, sets, sex) %>% 
   summarise(Avgload = mean(load, na.rm = TRUE),
-            Sdload = sd(load, na.rm = TRUE)) %>% 
-  head(38)
+            Sdload = sd(load, na.rm = TRUE))
+
+
+
 
