@@ -118,12 +118,12 @@ div.csl-indent {
 </header>
 
 
-<section id="testing-av-referanser" class="level2">
-<h2 class="anchored" data-anchor-id="testing-av-referanser">Testing av referanser</h2>
+<section id="testing-av-referanser" class="level1">
+<h1>Testing av referanser</h1>
 <p>Dette blir bra <span class="citation" data-cites="billatOxygenKineticsModelling2000">(<a href="#ref-billatOxygenKineticsModelling2000" role="doc-biblioref">1</a>)</span>! Muligens vanskelig <span class="citation" data-cites="bossiOptimizingIntervalTraining2020">(<a href="#ref-bossiOptimizingIntervalTraining2020" role="doc-biblioref">2</a>)</span>.</p>
 </section>
-<section id="scatterplot-av-alle-deltakere-i-boston-marathon-2019" class="level2">
-<h2 class="anchored" data-anchor-id="scatterplot-av-alle-deltakere-i-boston-marathon-2019">Scatterplot av alle deltakere i Boston marathon 2019</h2>
+<section id="scatterplot-av-alle-deltakere-i-boston-marathon-2019" class="level1">
+<h1>Scatterplot av alle deltakere i Boston marathon 2019</h1>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -133,8 +133,12 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Lekser uke 40</p>
-<p>Oppgave 14</p>
+</section>
+<section id="lekser-uke-40" class="level1">
+<h1>Lekser uke 40</h1>
+<section id="oppgave-14" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-14">Oppgave 14</h2>
+<p>Bruk datasettet strengthvolume og lag en graf over maksimalstyrke ved tidspunktene session1 og `post. Bruk en øverlse (exercise) og differensiere mellom treningsvolum (sets)</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exscidata)</span>
@@ -156,7 +160,10 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Oppgave 15</p>
+</section>
+<section id="oppgave-15" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-15">Oppgave 15</h2>
+<p>Bruk datasettet strengthvolume og lag en graf som beskriver forhold mellom beveg% elshastighet og styrke. Bevegelshastighet finnes i variabelen exercise, hvor isom er isometrisk styrke (0 grader/sek), isok.60, isok.120 og isok.240 er isokinetisk styrke ved 60, 120 og 240 grader per sekund. Undersøk om vi visuelt kan forskjell mellom i forhold mellom hastighet og kraft per tidspunkt og kjønn. Her kan man bruke en statistisk modell, for eksempel i JASPs Plot Builder, eller ved å bruke geom_smooth i ggplot2. Her må variablene forandres for å lage en kontinuerlig variabel som beskriver hastighet fra den kategoriske dataen i exercise.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exscidata)</span>
@@ -183,7 +190,10 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Oppgave 16</p>
+</section>
+<section id="oppgave-16" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-16">Oppgave 16</h2>
+<p>Bruk datasettet millward for å visualisere fordelingen av variabelene RNA og protein synthe% sis. Hvordan er variablene fordelt, hvordan kan vi beskrive fordelingene? Gjør det samme med valgfri data fra strengthvolume.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exscidata)</span>
@@ -210,10 +220,130 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="lekser-uke-42" class="level1">
+<h1>Lekser uke 42</h1>
+<section id="oppgave-4" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-4">Oppgave 4</h2>
+<p>Hva er gjennomsnittet i 𝑦 når 𝑥 = 25 gitt dataene i tabellen under og modellen som beskrevet over (bruk R eller JASP til å lage en regresjonsmodell)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Oppgave4 <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>y,          <span class="sc">~</span>x,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fl">24.101335</span>,   <span class="fl">26.95663</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fl">3.985363</span>,    <span class="fl">16.44842</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fl">30.791198</span>,   <span class="fl">35.88495</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">7.956984</span>,    <span class="fl">26.35217</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fl">20.332824</span>,   <span class="fl">23.68266</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fl">53.830212</span>,   <span class="fl">33.89251</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fl">57.869798</span>,   <span class="fl">42.78195</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fl">27.662066</span>,   <span class="fl">39.41210</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="fl">9.460978</span>,   <span class="fl">21.79455</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fl">24.423091</span>,   <span class="fl">23.87716</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fl">35.633235</span>,   <span class="fl">26.10441</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fl">77.110110</span>,   <span class="fl">47.16887</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fl">5.964273</span>,    <span class="fl">24.14388</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fl">10.763859</span>,   <span class="fl">44.22649</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fl">23.958606</span>,   <span class="fl">32.16668</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fl">45.799109</span>,   <span class="fl">17.25810</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>regresjon <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> Oppgave4)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regresjon)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x, data = Oppgave4)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-34.797 -12.288  -1.743  13.469  34.715 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept) -10.9790    16.7262  -0.656   0.5222  
+x             1.2784     0.5307   2.409   0.0303 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 19.61 on 14 degrees of freedom
+Multiple R-squared:  0.2931,    Adjusted R-squared:  0.2426 
+F-statistic: 5.804 on 1 and 14 DF,  p-value: 0.03034</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(regresjon, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+20.98113 </code></pre>
+</div>
+</div>
+</section>
+<section id="oppgave-7" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-7">Oppgave 7</h2>
+<p>Bruk datasettet cyclingstudy, lag en modell som beskriver hvordan høyde (height.T1) påvirker gjennomsnitt i VO₂ₘₐₖₛ (VO2.max).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exscidata)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Oppgave7 <span class="ot">&lt;-</span> cyclingstudy</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>mod_hoyde <span class="ot">&lt;-</span> <span class="fu">lm</span>(VO2.max <span class="sc">~</span> height.T1, <span class="at">data =</span> Oppgave7)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_hoyde)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = VO2.max ~ height.T1, data = Oppgave7)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-619.99 -279.54  -32.56  181.82 1109.81 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept) -2596.26    2936.51  -0.884   0.3883  
+height.T1      41.10      16.37   2.511   0.0218 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 436.8 on 18 degrees of freedom
+  (60 observations deleted due to missingness)
+Multiple R-squared:  0.2594,    Adjusted R-squared:  0.2183 
+F-statistic: 6.306 on 1 and 18 DF,  p-value: 0.02179</code></pre>
+</div>
+</div>
+</section>
+<section id="oppgave-8" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-8">Oppgave 8</h2>
+<p>Lag en beskrivelse av modellen i forrige oppgave som inneholder antagelser om fordeling av den avhengige variabelen og forholdet mellom uavhengig varaibel og gjennomsnitt i utfallsvariabelen.</p>
+<p>Svar: VO2maks (avghengig variabel) er antatt normalfordelt, det er et linært forhold mellom høyde og gjennomsnittlig vO2maks.</p>
+</section>
+<section id="oppgave-9" class="level2">
+<h2 class="anchored" data-anchor-id="oppgave-9">Oppgave 9</h2>
+<p>Lag en figur som beskriver sammenhengen mellom variablene i modellen over og en figur som beskriver residualene i forhold til «Predicted values», hva forteller figurene deg?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(exscidata)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Oppgave7, <span class="fu">aes</span>(height.T1, VO2.max)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Høyde og VO2maks"</span>, <span class="at">x =</span> <span class="st">"Høyde (cm)"</span>, <span class="at">y =</span> <span class="fu">expression</span>(VO[<span class="dv">2</span>] <span class="sc">*</span> <span class="st">" max (mL·min"</span><span class="sc">^-</span><span class="dv">1</span><span class="sc">*</span><span class="st">")"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Quarto_tut_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="referanser" class="level1 unnumbered">
+
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referanser</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-billatOxygenKineticsModelling2000" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Billat VL, Morton RH, Blondel N, Berthoin S, Bocquet V, Koralsztein JP, et al. <a href="https://doi.org/10.1007/s004210050670">Oxygen kinetics and modelling of time to exhaustion whilst running at various velocities at maximal oxygen uptake</a>. European Journal of Applied Physiology. 2000 Jun;82(3):178–87. </div>
 </div>

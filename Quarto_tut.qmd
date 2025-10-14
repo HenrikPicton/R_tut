@@ -6,11 +6,11 @@ bibliography: References.bib
 csl: vancouver.csl
 ---
 
-## Testing av referanser
+# Testing av referanser
 
 Dette blir bra @billatOxygenKineticsModelling2000! Muligens vanskelig @bossiOptimizingIntervalTraining2020.
 
-## Scatterplot av alle deltakere i Boston marathon 2019
+# Scatterplot av alle deltakere i Boston marathon 2019
 
 ```{r}
 #| echo: false
@@ -29,9 +29,12 @@ library(tidyverse)
 ```
 
 
-Lekser uke 40
+# Lekser uke 40
 
-Oppgave 14
+## Oppgave 14
+Bruk datasettet strengthvolume og lag en graf over maksimalstyrke ved tidspunktene
+session1 og `post. Bruk en øverlse (exercise) og differensiere mellom treningsvolum (sets)
+
 
 ```{r}
 #| echo: true
@@ -53,7 +56,14 @@ Oppgave14
 
 ```
 
-Oppgave 15
+## Oppgave 15
+Bruk datasettet strengthvolume og lag en graf som beskriver forhold mellom beveg%
+elshastighet og styrke. Bevegelshastighet finnes i variabelen exercise, hvor isom er isometrisk
+styrke (0 grader/sek), isok.60, isok.120 og isok.240 er isokinetisk styrke ved 60, 120 og 240
+grader per sekund. Undersøk om vi visuelt kan forskjell mellom i forhold mellom hastighet
+og kraft per tidspunkt og kjønn. Her kan man bruke en statistisk modell, for eksempel i JASPs
+Plot Builder, eller ved å bruke geom_smooth i ggplot2. Her må variablene forandres for å lage
+en kontinuerlig variabel som beskriver hastighet fra den kategoriske dataen i exercise.
 
 ```{r}
 #| echo: true
@@ -79,7 +89,10 @@ Oppgave15 <- strengthvolume %>%
 Oppgave15
 ```
 
-Oppgave 16
+## Oppgave 16
+Bruk datasettet millward for å visualisere fordelingen av variabelene RNA og protein synthe%
+sis. Hvordan er variablene fordelt, hvordan kan vi beskrive fordelingene? Gjør det samme
+med valgfri data fra strengthvolume.
 
 ```{r}
 #| echo: true
@@ -106,3 +119,105 @@ Oppgave16a
 
 
 ```
+
+# Lekser uke 42
+
+
+## Oppgave 4
+Hva er gjennomsnittet i 𝑦 når 𝑥 = 25 gitt dataene i tabellen under og modellen som beskrevet
+over (bruk R eller JASP til å lage en regresjonsmodell)
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+Oppgave4 <- tribble(
+  ~y,          ~x,
+  24.101335,   26.95663,
+  3.985363,    16.44842,
+  30.791198,   35.88495,
+  7.956984,    26.35217,
+  20.332824,   23.68266,
+  53.830212,   33.89251,
+  57.869798,   42.78195,
+  27.662066,   39.41210,
+  -9.460978,   21.79455,
+  24.423091,   23.87716,
+  35.633235,   26.10441,
+  77.110110,   47.16887,
+  5.964273,    24.14388,
+  10.763859,   44.22649,
+  23.958606,   32.16668,
+  45.799109,   17.25810)
+
+regresjon <- lm(y ~ x, data = Oppgave4)
+summary(regresjon)
+
+predict(regresjon, newdata = data.frame(x = 25))
+
+
+```
+
+## Oppgave 7
+Bruk datasettet cyclingstudy, lag en modell som beskriver hvordan høyde (height.T1)
+påvirker gjennomsnitt i VO₂ₘₐₖₛ (VO2.max).
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(exscidata)
+
+Oppgave7 <- cyclingstudy
+
+mod_hoyde <- lm(VO2.max ~ height.T1, data = Oppgave7)
+summary(mod_hoyde)
+
+
+```
+
+## Oppgave 8
+Lag en beskrivelse av modellen i forrige oppgave som inneholder antagelser om fordeling
+av den avhengige variabelen og forholdet mellom uavhengig varaibel og gjennomsnitt i
+utfallsvariabelen.
+
+Svar: VO2maks (avghengig variabel) er antatt normalfordelt, det er et linært forhold mellom høyde og gjennomsnittlig vO2maks.
+
+## Oppgave 9
+Lag en figur som beskriver sammenhengen mellom variablene i modellen over og en figur
+som beskriver residualene i forhold til «Predicted values», hva forteller figurene deg?
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(exscidata)
+
+ggplot(Oppgave7, aes(height.T1, VO2.max)) +
+  geom_point()+
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Høyde og VO2maks", x = "Høyde (cm)", y = expression(VO[2] * " max (mL·min"^-1*")"))
+
+Oppgave9 <- Oppgave7 %>% 
+  mutate(predicted = predict(mod_hoyde),
+         )
+
+```
+
+
+
+# Referanser
+
+
+
+
+
+
+
+
