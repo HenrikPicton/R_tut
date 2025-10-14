@@ -57,8 +57,7 @@ Oppgave14
 ```
 
 ## Oppgave 15
-Bruk datasettet strengthvolume og lag en graf som beskriver forhold mellom beveg%
-elshastighet og styrke. Bevegelshastighet finnes i variabelen exercise, hvor isom er isometrisk
+Bruk datasettet strengthvolume og lag en graf som beskriver forhold mellom bevegelshastighet og styrke. Bevegelshastighet finnes i variabelen exercise, hvor isom er isometrisk
 styrke (0 grader/sek), isok.60, isok.120 og isok.240 er isokinetisk styrke ved 60, 120 og 240
 grader per sekund. Undersøk om vi visuelt kan forskjell mellom i forhold mellom hastighet
 og kraft per tidspunkt og kjønn. Her kan man bruke en statistisk modell, for eksempel i JASPs
@@ -203,6 +202,9 @@ ggplot(Oppgave7, aes(height.T1, VO2.max)) +
   geom_point()+
   geom_smooth(method = "lm", se = TRUE) +
   labs(title = "Høyde og VO2maks", x = "Høyde (cm)", y = expression(VO[2] * " max (mL·min"^-1*")"))
+
+
+
 
 
 
