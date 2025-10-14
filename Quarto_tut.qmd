@@ -204,9 +204,7 @@ ggplot(Oppgave7, aes(height.T1, VO2.max)) +
   geom_smooth(method = "lm", se = TRUE) +
   labs(title = "Høyde og VO2maks", x = "Høyde (cm)", y = expression(VO[2] * " max (mL·min"^-1*")"))
 
-Oppgave9 <- Oppgave7 %>% 
-  mutate(predicted = predict(mod_hoyde),
-         )
+
 
 ```
 
