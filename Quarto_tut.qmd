@@ -28,13 +28,11 @@ library(tidyverse)
 
 ```
 
-
 # Lekser uke 40
 
 ## Oppgave 14
-Bruk datasettet strengthvolume og lag en graf over maksimalstyrke ved tidspunktene
-session1 og `post. Bruk en øverlse (exercise) og differensiere mellom treningsvolum (sets)
 
+Bruk datasettet strengthvolume og lag en graf over maksimalstyrke ved tidspunktene session1 og \`post. Bruk en øverlse (exercise) og differensiere mellom treningsvolum (sets)
 
 ```{r}
 #| echo: true
@@ -57,12 +55,8 @@ Oppgave14
 ```
 
 ## Oppgave 15
-Bruk datasettet strengthvolume og lag en graf som beskriver forhold mellom bevegelshastighet og styrke. Bevegelshastighet finnes i variabelen exercise, hvor isom er isometrisk
-styrke (0 grader/sek), isok.60, isok.120 og isok.240 er isokinetisk styrke ved 60, 120 og 240
-grader per sekund. Undersøk om vi visuelt kan forskjell mellom i forhold mellom hastighet
-og kraft per tidspunkt og kjønn. Her kan man bruke en statistisk modell, for eksempel i JASPs
-Plot Builder, eller ved å bruke geom_smooth i ggplot2. Her må variablene forandres for å lage
-en kontinuerlig variabel som beskriver hastighet fra den kategoriske dataen i exercise.
+
+Bruk datasettet strengthvolume og lag en graf som beskriver forhold mellom bevegelshastighet og styrke. Bevegelshastighet finnes i variabelen exercise, hvor isom er isometrisk styrke (0 grader/sek), isok.60, isok.120 og isok.240 er isokinetisk styrke ved 60, 120 og 240 grader per sekund. Undersøk om vi visuelt kan forskjell mellom i forhold mellom hastighet og kraft per tidspunkt og kjønn. Her kan man bruke en statistisk modell, for eksempel i JASPs Plot Builder, eller ved å bruke geom_smooth i ggplot2. Her må variablene forandres for å lage en kontinuerlig variabel som beskriver hastighet fra den kategoriske dataen i exercise.
 
 ```{r}
 #| echo: true
@@ -89,9 +83,8 @@ Oppgave15
 ```
 
 ## Oppgave 16
-Bruk datasettet millward for å visualisere fordelingen av variabelene RNA og protein synthe%
-sis. Hvordan er variablene fordelt, hvordan kan vi beskrive fordelingene? Gjør det samme
-med valgfri data fra strengthvolume.
+
+Bruk datasettet millward for å visualisere fordelingen av variabelene RNA og protein synthe% sis. Hvordan er variablene fordelt, hvordan kan vi beskrive fordelingene? Gjør det samme med valgfri data fra strengthvolume.
 
 ```{r}
 #| echo: true
@@ -121,10 +114,10 @@ Oppgave16a
 
 # Lekser uke 42
 
-
 ## Oppgave 4
-Hva er gjennomsnittet i 𝑦 når 𝑥 = 25 gitt dataene i tabellen under og modellen som beskrevet
-over (bruk R eller JASP til å lage en regresjonsmodell)
+
+Hva er gjennomsnittet i 𝑦 når 𝑥 = 25 gitt dataene i tabellen under og modellen som beskrevet over (bruk R eller JASP til å lage en regresjonsmodell)
+
 ```{r}
 #| echo: true
 #| message: false
@@ -160,8 +153,8 @@ predict(regresjon, newdata = data.frame(x = 25))
 ```
 
 ## Oppgave 7
-Bruk datasettet cyclingstudy, lag en modell som beskriver hvordan høyde (height.T1)
-påvirker gjennomsnitt i VO₂ₘₐₖₛ (VO2.max).
+
+Bruk datasettet cyclingstudy, lag en modell som beskriver hvordan høyde (height.T1) påvirker gjennomsnitt i VO₂ₘₐₖₛ (VO2.max).
 
 ```{r}
 #| echo: true
@@ -180,15 +173,14 @@ summary(mod_hoyde)
 ```
 
 ## Oppgave 8
-Lag en beskrivelse av modellen i forrige oppgave som inneholder antagelser om fordeling
-av den avhengige variabelen og forholdet mellom uavhengig varaibel og gjennomsnitt i
-utfallsvariabelen.
+
+Lag en beskrivelse av modellen i forrige oppgave som inneholder antagelser om fordeling av den avhengige variabelen og forholdet mellom uavhengig varaibel og gjennomsnitt i utfallsvariabelen.
 
 Svar: VO2maks (avghengig variabel) er antatt normalfordelt, det er et linært forhold mellom høyde og gjennomsnittlig vO2maks.
 
 ## Oppgave 9
-Lag en figur som beskriver sammenhengen mellom variablene i modellen over og en figur
-som beskriver residualene i forhold til «Predicted values», hva forteller figurene deg?
+
+Lag en figur som beskriver sammenhengen mellom variablene i modellen over og en figur som beskriver residualene i forhold til «Predicted values», hva forteller figurene deg?
 
 ```{r}
 #| echo: true
@@ -210,14 +202,4 @@ ggplot(Oppgave7, aes(height.T1, VO2.max)) +
 
 ```
 
-
-
 # Referanser
-
-
-
-
-
-
-
-
