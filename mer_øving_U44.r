@@ -1,5 +1,6 @@
 library(exscidata)
 library(tidyverse)
+library(lme4)
 
 cyc_select <-  cyclingstudy %>%
         filter(timepoint == "pre") %>%
@@ -56,3 +57,15 @@ color = "blue") +
               y = expression("VO"["2max"] ~ (ml^-1 ~ min^-1))) +
          theme_classic()
 residualplot
+
+
+dat <- tenthirty |> 
+  filter(exercise == "legpress", 
+         time %in% c("pre", "post")) |> 
+  # fix the order of the time factor
+  mutate(time = factor(time, levels = c("pre", "post"))) |> 
+  print()
+
+lmer1 <- lmer(load ~ time * group + (1|participant),
+              data = dat)
+summary(lmer1)                  
