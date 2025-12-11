@@ -10,6 +10,9 @@ editor: source
 ---
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
 
 library(tidyverse)
 library(exscidata)
@@ -19,6 +22,9 @@ library(exscidata)
 ```
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
 #| eval: false
 #Koden blir ikke lest til quarto filen
 
@@ -31,7 +37,11 @@ d <- digitize()
 
 ```
 
+
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
 
 library(tidyverse)
 library(exscidata)
@@ -64,9 +74,162 @@ exscidata::hbmass |>
     pivot_wider(names_from = time,
                 values_from = hb) |> 
     
-    summarise(c = cor(pre, post)) |> 
+    summarise(c = cor(pre, post))
     
-    print()
+
+
+
+# Ancova effect size
+
+d2 <- exscidata::hbmass |> 
+        pivot_wider(names_from = time,
+                    values_from = hb)
+
+m <- lm(post ~ pre + group,
+        data = d2)
+
+tval <- coef(summary(m))[3, 3]
+df <- m$df.residual
+
+rval <- sqrt(tval^2 / (tval^2 + df))
+
+cohensd <- 2*rval / sqrt(1 - rval^2)
 
 
 ```
+
+
+## Analyze Rønnestad 2022
+
+### Change scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+dat <- exscidata::heatxc |> 
+    select(participant, group, time, hbmass)
+
+# change scores
+
+change_dat <- dat |> 
+        pivot_wider(names_from = time,
+                    values_from = hbmass) |> 
+
+        mutate(change = post - pre,
+                group = factor(group, levels = c("exp",
+                                                "con")))
+
+change_score_results <- t.test(change ~ group,
+        data = change_dat)
+
+# create numeric values with correct numbers of variables
+
+tval <- round(change_score_results$statistic, 2)
+
+df <- round(change_score_results$parameter, 1)
+
+pval <- round(change_score_results$p.value, 4)
+
+conf <- round(change_score_results$conf.int, 1)
+
+diff <- change_score_results$estimate
+
+diff <- as.numeric(round(diff[1] - diff[2], 1))
+
+stats <- paste0(
+        diff,
+        " g, 95% CI: [",
+        conf[1],
+        ", ",
+        conf[2],
+        "], t(",
+        df,
+        ") = ",
+        tval,
+        ", p = ",
+        pval)
+
+
+```
+
+(mean difference `r stats`)
+
+### Mixed Model
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(lme4)
+
+dat <- exscidata::heatxc |>
+        select(participant:time, hbmass) |> 
+        mutate(time = factor(time, levels = c("pre", "post")),
+                group = factor(group, levels = c("con", "exp")))
+
+m <- lmer(hbmass ~ time * group + (1|participant),
+    data = dat)
+
+conf <- confint(m)[6,]
+diff <- round(coef(summary(m))[4, 1], 1)
+tval <- round(coef(summary(m))[4, 3], 3)
+se <- round(coef(summary(m))[4, 2], 2)
+
+stats <- paste0(
+        diff,
+        " g, 95% CI: [",
+        conf[1],
+        ", ",
+        conf[2],
+        "], t = ",
+        tval)
+        
+
+
+```
+
+(mean difference `r stats`)
+
+### ANCOVA
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+dat <- exscidata::heatxc |> 
+    select(participant:time, hbmass) |> 
+    pivot_wider(names_from = time,
+                values_from = hbmass)
+
+m <- lm(post ~ pre + group,
+        data = dat)
+
+plot(m)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+dat <- exscidata::heatxc |> 
+    select(participant:time, hbmass) |> 
+    pivot_wider(names_from = time,
+                values_from = hbmass) |> 
+    mutate(change = post - pre)
+
+m <- lm(post ~ pre + group,
+        data = dat)
+
+m2 <- lm(change ~ pre + group,
+    data = dat)
+
+
+summary(m)
+summary(m2)
+``` 
