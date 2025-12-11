@@ -34,3 +34,19 @@ ggplot(data = data.frame(pill, fluid, bp),
 aes(as.factor(pill), bp)) +
   geom_boxplot()
 
+#Confounder
+
+set.seed(1)
+
+sleep <- rbinom(100, 1, 0.5)
+
+training <- rnorm(100, sleep * (1), 1)
+
+strength <- rnorm(100, sleep * (0.8), 1)
+
+m2 <- lm(strength ~ training + sleep)
+
+summary(m2)
+
+#Collider
+
