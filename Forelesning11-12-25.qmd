@@ -17,3 +17,56 @@ library(exscidata)
 
 
 ```
+
+```{r}
+#| eval: false
+#Koden blir ikke lest til quarto filen
+
+library(digitize)
+
+#Hente data (individuelle verdier) fra bilde i lokale filer
+
+d <- digitize()
+
+
+```
+
+```{r}
+
+library(tidyverse)
+library(exscidata)
+
+ s <- exscidata::hbmass |> 
+        filter(time == "pre") |> 
+        summarise(s = sd(hb)) |> 
+        pull(s)
+
+d <- exscidata::hbmass |> 
+    pivot_wider(names_from = time,
+                values_from = hb) |> 
+    mutate(change = post - pre) |> 
+
+    summarise(.by = group,
+             m = mean(change)) |> 
+    
+    pivot_wider(names_from = group,
+                values_from = m) |> 
+    
+    mutate(d = heat - con) |> 
+    pull(d)
+
+es <- d / s
+
+es
+
+
+exscidata::hbmass |> 
+    pivot_wider(names_from = time,
+                values_from = hb) |> 
+    
+    summarise(c = cor(pre, post)) |> 
+    
+    print()
+
+
+```
